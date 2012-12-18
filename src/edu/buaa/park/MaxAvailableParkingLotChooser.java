@@ -17,13 +17,19 @@ public class MaxAvailableParkingLotChooser implements ParkingLotChooser{
      * @return  parkPlace;
      */
 
-    public ParkPlace getAvailablePark(List<ParkPlace> parkPlaceList){
+    public ParkPlace getAvailablePark(List<ParkPlace> parkPlaceList)
+    {
         int maxsizeIndex=0;
-        for(int i=1;i< parkPlaceList.size();i++){
+
+        for(int i=1;i< parkPlaceList.size();i++)
+        {
             if(parkPlaceList.get(i).getAvailableNum()> parkPlaceList.get(maxsizeIndex).getAvailableNum())
                 maxsizeIndex=i;
         }
-        if(parkPlaceList.get(maxsizeIndex).getAvailableNum()==0)throw new ParkFullException("所有的停车场都已满");
+
+        if(parkPlaceList.get(maxsizeIndex).getAvailableNum() == 0)
+            throw new ParkFullException("所有的停车场都已满");
+
         return   parkPlaceList.get(maxsizeIndex);
     }
 }

@@ -12,27 +12,30 @@ import java.util.List;
  */
 
 
-public class ParkingDirector {
+public class ParkingDirector
+{
 
-    List<ParkingManager>   parkingManagers ;
-
+    List<ParkingManager> parkingManagers;
     int allCapacity ;
     int allAvailableNum ;
-
 
     /**
      * 显示所有停车列表
      * @param parkingManagers
      */
-    public void showAllRecord(List<ParkingManager>  parkingManagers){
+    public void showAllRecord(List<ParkingManager>  parkingManagers)
+    {
 
-          for(int i =0;i< parkingManagers.size();i++)
+          for(int i = 0; i < parkingManagers.size(); i++)
           {
-          System.out.println("经理编号："+parkingManagers.get(i).getParkingManagerId());
+              System.out.println("经理编号：" + parkingManagers.get(i).getParkingManagerId());
               showPakingInfo(parkingManagers.get(i).getParkPlaces());
-            for(int j =0;j<parkingManagers.get(i).parkingBoys.size();j++)
-            {     System.out.println("停车仔编号："+
-                   parkingManagers.get(i).parkingBoys.get(j).getParkingBoyId());
+
+              for(int j = 0; j < parkingManagers.get(i).parkingBoys.size(); j++)
+              {
+                  System.out.println("停车仔编号：" +
+                          parkingManagers.get(i).parkingBoys.get(j).getParkingBoyId());
+
                 showPakingInfo(parkingManagers.get(i).parkingBoys.get(j).getParkPlaces());
             }
           }
@@ -42,22 +45,28 @@ public class ParkingDirector {
      * 显示所有停车列表，并统计总的车位数，以及空位数
      * @param parkingManagers
      */
-    public void showAllRecordAndTotalCount(List<ParkingManager>  parkingManagers){
+    public void showAllRecordAndTotalCount(List<ParkingManager>  parkingManagers)
+    {
         for(int i =0;i< parkingManagers.size();i++)
         {
             System.out.println("经理编号："+parkingManagers.get(i).getParkingManagerId());
+
             showPakingInfo(parkingManagers.get(i).getParkPlaces());
+
             allCapacity  = + calAllCapacity(parkingManagers.get(i).getParkPlaces());
             allAvailableNum  = + calAllAvailableNum(parkingManagers.get(i).getParkPlaces());
-            for(int j =0;j<parkingManagers.get(i).parkingBoys.size();j++)
+
+            for(int j = 0; j < parkingManagers.get(i).parkingBoys.size(); j++)
             {
-                System.out.println("停车仔编号："+
+                System.out.println("停车仔编号：" +
                         parkingManagers.get(i).parkingBoys.get(j).getParkingBoyId());
+
                 showPakingInfo(parkingManagers.get(i).parkingBoys.get(j).getParkPlaces());
-                allCapacity  = + calAllCapacity(parkingManagers.get(i).parkingBoys.get(j).getParkPlaces());
-                allAvailableNum  = + calAllAvailableNum( parkingManagers.get(i).parkingBoys.get(j).getParkPlaces());
+                allCapacity += calAllCapacity(parkingManagers.get(i).parkingBoys.get(j).getParkPlaces());
+                allAvailableNum += calAllAvailableNum( parkingManagers.get(i).parkingBoys.get(j).getParkPlaces());
             }
         }
+
         System.out.println("Total车位数："+allCapacity);
         System.out.println("Total空位数："+allAvailableNum);
     }

@@ -66,7 +66,7 @@ public class ParkTest {
         park.parkCar(new Car());
         Ticket ticket =park.parkCar(new Car());
 
-         Car c=park.fecthCar(ticket);
+         Car c=park.fetchCar(ticket);
          Assert.assertEquals(park.getAvailableNum(), 48);
     }
 
@@ -78,7 +78,7 @@ public class ParkTest {
 
         Car mycar = new Car();
         Ticket ticket = park.parkCar(mycar);
-        Car fetchedCar=park.fecthCar(ticket);
+        Car fetchedCar=park.fetchCar(ticket);
         Assert.assertSame(mycar,fetchedCar);
     }
 

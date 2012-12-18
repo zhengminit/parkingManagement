@@ -18,16 +18,26 @@ public class HighVacanyParkingLotChooser implements ParkingLotChooser{
      * @param parkPlaceList
      * @return  parkPlace;
      */
-
-    public  ParkPlace getAvailablePark(List<ParkPlace> parkPlaceList){
-
+    public  ParkPlace getAvailablePark(List<ParkPlace> parkPlaceList)
+    {
         int maxsizeIndex=0;
-        for(int i= 1;i< parkPlaceList.size();i++){
-            if( (double)parkPlaceList.get(i).getAvailableNum()/ parkPlaceList.get(i).getTotalCapacity()
-                    > (double)parkPlaceList.get(maxsizeIndex).getAvailableNum()/parkPlaceList.get(maxsizeIndex).getTotalCapacity())
+
+        double highestVacanyRate = (double)parkPlaceList.get(0).getAvailableNum() / parkPlaceList.get(0).getTotalCapacity();
+
+        for(int i = 1; i < parkPlaceList.size(); i++)
+        {
+            double tempVacanyRate = (double)parkPlaceList.get(i).getAvailableNum() / parkPlaceList.get(i).getTotalCapacity();
+
+            if( tempVacanyRate > highestVacanyRate)
+            {
+                highestVacanyRate = tempVacanyRate;
                 maxsizeIndex=i;
+            }
         }
-        if(parkPlaceList.get(maxsizeIndex).getAvailableNum()==0) throw new ParkFullException("所有的停车场都已满");
+
+        if(parkPlaceList.get(maxsizeIndex).getAvailableNum()==0)
+            throw new ParkFullException("所有的停车场都已满");
+
         return   parkPlaceList.get(maxsizeIndex);
     }
 }

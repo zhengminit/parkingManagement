@@ -9,6 +9,7 @@ import java.util.List;
  * Time: 下午2:59
  * To change this template use File | Settings | File Templates.
  */
-public interface ParkingLotChooser {
+public interface ParkingLotChooser
+{
     ParkPlace getAvailablePark(List<ParkPlace> parkPlaceList);
 }

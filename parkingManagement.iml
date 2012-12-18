@@ -16,8 +16,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
-    <orderEntry type="library" exported="" name="jdk1.7" level="project" />
+    <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
   </component>
 </module>
 

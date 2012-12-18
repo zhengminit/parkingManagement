@@ -9,66 +9,72 @@ import java.util.List;
  * Time: 下午1:09
  * To change this template use File | Settings | File Templates.
  */
-public class ParkingManager {
-
-    /**
-     * 管理多个parkingBoys
-     */
-     List<ParkingBoy>   parkingBoys ;
-
+public class ParkingManager
+{
+    List<ParkingBoy>   parkingBoys ;  //管理多个parkingBoys
     protected List<ParkPlace> parkPlaces;
     private  ParkingLotChooser parkingLotChooser;
-    /**
-     * 获取经理的id号，唯一标示
-     */
-    private String  parkingManagerId;
+    private String parkingManagerId; //获取经理的id号，唯一标示
 
-
-    public ParkingManager(List<ParkPlace> parkPlaces, ParkingLotChooser parkingLotChooser) {
-        this.parkPlaces=parkPlaces;
-        this.parkingLotChooser = parkingLotChooser;
-    }
-
-    public ParkingManager(String parkingManagerId,List<ParkingBoy> parkingBoys ,List<ParkPlace> parkPlaces ,ParkingLotChooser parkingLotChooser) {
-        this.parkingManagerId =parkingManagerId;
-        this.parkingBoys =  parkingBoys;
+    public ParkingManager(List<ParkPlace> parkPlaces, ParkingLotChooser parkingLotChooser)
+    {
         this.parkPlaces = parkPlaces;
-
         this.parkingLotChooser = parkingLotChooser;
     }
 
-    public Ticket park(Car car) {
+    public ParkingManager(String parkingManagerId,List<ParkingBoy> parkingBoys ,List<ParkPlace> parkPlaces ,ParkingLotChooser parkingLotChooser)
+    {
+        this.parkingManagerId = parkingManagerId;
+        this.parkingBoys = parkingBoys;
+        this.parkPlaces = parkPlaces;
+        this.parkingLotChooser = parkingLotChooser;
+    }
+
+    public Ticket park(Car car)
+    {
         return parkingLotChooser.getAvailablePark(parkPlaces).parkCar(car);
     }
 
-    public Integer getAvailableNum() {
+    public Integer getAvailableNum()
+    {
         int availableNum=0;
-        for(ParkPlace parkPlace:parkPlaces){
-            availableNum+=parkPlace.getAvailableNum();
+
+        for(ParkPlace parkPlace:parkPlaces)
+        {
+            availableNum += parkPlace.getAvailableNum();
         }
+
         return availableNum;
     }
-    public Car fetch(Ticket ticket) {
+
+    public Car fetch(Ticket ticket)
+    {
         Car fetchedCar=null;
-        for(ParkPlace parkPlace:parkPlaces){
-            fetchedCar=parkPlace.fecthCar(ticket);
+
+        for(ParkPlace parkPlace:parkPlaces)
+        {
+            fetchedCar=parkPlace.fetchCar(ticket);
             if(fetchedCar!=null){return fetchedCar;}
         }
+
         throw new NoCarException("没有此车");
     }
-    public String getParkingManagerId(){
+
+    public String getParkingManagerId()
+    {
         return  parkingManagerId;
     }
-    public List<ParkPlace> getParkPlaces()  {
+
+    public List<ParkPlace> getParkPlaces()
+    {
         return this.parkPlaces;
     }
 
-    public void showParkingBoys(List<ParkingBoy> parkingBoys)  {
-
-        for(int i = 0;i< parkingBoys.size();i++)
+    public void showParkingBoys(List<ParkingBoy> parkingBoys)
+    {
+        for(int i = 0; i < parkingBoys.size(); i++)
         {
             System.out.println(""+parkingBoys.get(i).getParkingBoyId());
         }
-
     }
 }

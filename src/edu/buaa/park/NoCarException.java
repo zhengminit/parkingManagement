@@ -7,10 +7,14 @@ package edu.buaa.park;
  * Time: 下午4:20
  * To change this template use File | Settings | File Templates.
  */
-public class NoCarException extends RuntimeException{
-    public NoCarException() {
+public class NoCarException extends RuntimeException
+{
+    public NoCarException()
+    {
     }
-    public NoCarException(String message) {
+
+    public NoCarException(String message)
+    {
         super(message);
     }
 }

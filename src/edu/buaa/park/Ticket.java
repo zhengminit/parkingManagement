@@ -7,5 +7,6 @@ package edu.buaa.park;
  * Time: 下午4:02
  * To change this template use File | Settings | File Templates.
  */
-public class Ticket {
+public class Ticket
+{
 }
