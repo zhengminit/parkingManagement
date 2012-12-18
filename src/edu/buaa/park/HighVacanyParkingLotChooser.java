@@ -11,8 +11,8 @@ import java.util.List;
  * Time: 下午12:41
  * To change this template use File | Settings | File Templates.
  */
-public class HighVacanyParkingLotChooser implements ParkingLotChooser{
-
+public class HighVacanyParkingLotChooser implements ParkingLotChooser
+{
     /**
      * @  获取空置率最高的那个停车场
      * @param parkPlaceList

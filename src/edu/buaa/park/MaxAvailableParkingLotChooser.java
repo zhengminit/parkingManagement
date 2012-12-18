@@ -9,8 +9,8 @@ import java.util.List;
  * Time: 下午2:53
  * To change this template use File | Settings | File Templates.
  */
-public class MaxAvailableParkingLotChooser implements ParkingLotChooser{
-
+public class MaxAvailableParkingLotChooser implements ParkingLotChooser
+{
     /**
      * @  获取空车位最多的那个停车场
      * @param parkPlaceList

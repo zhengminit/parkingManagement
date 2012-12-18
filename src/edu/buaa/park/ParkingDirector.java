@@ -75,7 +75,8 @@ public class ParkingDirector
      * 显示所有停车列表，并统计每个经理、停车仔的车位数、空位数 以及 总的车位数，以及空位数
      * @param parkingManagers
      */
-    public void showAllRecordAndCount(List<ParkingManager>  parkingManagers){
+    public void showAllRecordAndCount(List<ParkingManager>  parkingManagers)
+    {
         for(int i =0;i< parkingManagers.size();i++)
         {
             System.out.println("经理编号："+parkingManagers.get(i).getParkingManagerId());
@@ -103,12 +104,14 @@ public class ParkingDirector
                 allAvailableNum  = + calAllAvailableNum( parkingManagers.get(i).parkingBoys.get(j).getParkPlaces());
             }
         }
+
         System.out.println("Total车位数："+allCapacity);
         System.out.println("Total空位数："+allAvailableNum);
     }
 
 
-    public void showPakingInfo(List<ParkPlace> parkPlaces) {
+    public void showPakingInfo(List<ParkPlace> parkPlaces)
+    {
         for(int i =0 ;i< parkPlaces.size();i++)
         {
             System.out.println("\t停车场编号:" +parkPlaces.get(i).getIndex());
@@ -120,32 +123,47 @@ public class ParkingDirector
 
 
 
-    public int  calAllCapacity(List<ParkPlace> parkPlaces){
-        for(int i =0 ;i< parkPlaces.size();i++){
+    public int  calAllCapacity(List<ParkPlace> parkPlaces)
+    {
+        for(int i =0 ;i< parkPlaces.size();i++)
+        {
             allCapacity = allCapacity + parkPlaces.get(i).getTotalCapacity();
         }
+
         return allCapacity;
     }
 
-    public int  calAllAvailableNum(List<ParkPlace> parkPlaces){
-        for(int i =0 ;i< parkPlaces.size();i++){
+    public int  calAllAvailableNum(List<ParkPlace> parkPlaces)
+    {
+        for(int i =0 ;i< parkPlaces.size();i++)
+        {
             allAvailableNum = allAvailableNum + parkPlaces.get(i).getAvailableNum();
         }
+
         return allAvailableNum;
     }
-    public int  calCapacity(List<ParkPlace> parkPlaces){
+
+    public int  calCapacity(List<ParkPlace> parkPlaces)
+    {
         int capacity = 0;
-        for(int i =0 ;i< parkPlaces.size();i++){
+
+        for(int i =0 ;i< parkPlaces.size();i++)
+        {
             capacity = capacity + parkPlaces.get(i).getTotalCapacity();
         }
+
         return capacity;
     }
 
-    public int  calAvailableNum(List<ParkPlace> parkPlaces){
+    public int  calAvailableNum(List<ParkPlace> parkPlaces)
+    {
         int availableNum = 0;
-        for(int i =0 ;i< parkPlaces.size();i++){
+
+        for(int i =0 ;i< parkPlaces.size();i++)
+        {
             availableNum = availableNum + parkPlaces.get(i).getAvailableNum();
         }
+
         return availableNum;
     }
 
