@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="ZhengMin-PC" name="edu.buaa.test.ParkingDirectorTest" tests="3" time="0.017" timestamp="2012-12-21T15:14:48">
+  <properties />
+  <testcase classname="edu.buaa.test.ParkingDirectorTest" name="testAllRecord" time="0.0080" />
+  <testcase classname="edu.buaa.test.ParkingDirectorTest" name="testAllRecordAndTotalCount" time="0.0010" />
+  <testcase classname="edu.buaa.test.ParkingDirectorTest" name="testAllRecordAndCount" time="0.0010" />
+  <system-out><![CDATA[经理编号：经理1
+	停车场编号:5
+		车位数:10
+		空位数10
+停车仔编号：停车仔1
+	停车场编号:1
+		车位数:20
+		空位数20
+	停车场编号:2
+		车位数:18
+		空位数18
+停车仔编号：停车仔2
+	停车场编号:3
+		车位数:16
+		空位数16
+	停车场编号:4
+		车位数:22
+		空位数22
+经理编号：经理1
+	停车场编号:5
+		车位数:10
+		空位数10
+停车仔编号：停车仔1
+	停车场编号:1
+		车位数:20
+		空位数20
+	停车场编号:2
+		车位数:18
+		空位数18
+停车仔编号：停车仔2
+	停车场编号:3
+		车位数:16
+		空位数16
+	停车场编号:4
+		车位数:22
+		空位数22
+Total车位数：154
+Total空位数：154
+经理编号：经理1
+	停车场编号:5
+		车位数:10
+		空位数10
+	Total车位数：10
+	Total空位数：10
+停车仔编号：停车仔1
+	停车场编号:1
+		车位数:20
+		空位数20
+	停车场编号:2
+		车位数:18
+		空位数18
+	Total车位数：38
+	Total空位数：38
+停车仔编号：停车仔2
+	停车场编号:3
+		车位数:16
+		空位数16
+	停车场编号:4
+		车位数:22
+		空位数22
+	Total车位数：38
+	Total空位数：38
+Total车位数：86
+Total空位数：86
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
