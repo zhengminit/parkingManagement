@@ -41,7 +41,8 @@ public class HighVacanyTest {
    *    在此时，第0个停车场的空置率为9/10，而第1个停车场的空置率为19/20，故第三次停车仔第1个停车场。
    * */
     @Test
-    public  void should_park_in_the_high_vacany_parkplace(){
+    public  void should_park_in_the_high_vacany_parkplace()
+    {
         parkingBoy.park(new Car());
         parkingBoy.park(new Car());
         parkingBoy.park(new Car());
@@ -55,7 +56,8 @@ public class HighVacanyTest {
     两个车库空置率一样时停在第0个
     * */
     @Test
-    public void  should_park_in_the_first_parkplace_if_park_highvacany_same(){
+    public void  should_park_in_the_first_parkplace_if_park_highvacany_same()
+    {
         parkingBoy.park(new Car());
         Assert.assertEquals(9, parkPlaces.get(0).getAvailableNum());
     }

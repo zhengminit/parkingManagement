@@ -18,13 +18,15 @@ import java.util.List;
  * Time: 下午3:18
  * To change this template use File | Settings | File Templates.
  */
-public class MoreAvailableTest {
+public class MoreAvailableTest
+{
 
     private Integer totalAmount;
     private ParkingBoy parkingBoy;
     private List<ParkPlace> parkPlaces;
     @Before
-    public void init(){
+    public void init()
+    {
         List<ParkPlace> parkPlaces=new ArrayList<ParkPlace>();
         Integer[] parkPlaceNums= new Integer[]{10, 20};
         totalAmount=0;
@@ -40,7 +42,8 @@ public class MoreAvailableTest {
    *    停车停在空车位多的那个停车场
    * */
     @Test
-    public  void should_park_in_the_more_empty_parkplace(){
+    public  void should_park_in_the_more_empty_parkplace()
+    {
         parkingBoy.park(new Car());
         Assert.assertEquals(19, parkPlaces.get(1).getAvailableNum());
     }
@@ -49,7 +52,8 @@ public class MoreAvailableTest {
     两个车库空间相同时停在第0个
     * */
     @Test
-    public void  should_park_in_the_first_parkplace_if_park_availableSize_same(){
+    public void  should_park_in_the_first_parkplace_if_park_availableSize_same()
+    {
         for(int i=0;i<10;i++){
             parkingBoy.park(new Car());
         }

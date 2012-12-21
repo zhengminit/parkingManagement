@@ -19,16 +19,19 @@ import java.util.List;
 /**
  * 停车仔管理多个停车场
  */
-public class ParkingBoyTest_WhenHavingSeveralParkplace {
+public class ParkingBoyTest_WhenHavingSeveralParkplace
+{
     private Integer totalAmount;
     private ParkingBoy parkingBoy;
     private  List<ParkPlace> parkPlaces;
     @Before
-    public void init(){
+    public void init()
+    {
         List<ParkPlace> parkPlaces=new ArrayList<ParkPlace>();
         Integer[] parkPlaceNums= new Integer[]{10, 20};
         totalAmount=0;
-        for(Integer parknum:parkPlaceNums){
+        for(Integer parknum:parkPlaceNums)
+        {
               parkPlaces.add(new ParkPlace(parknum));
             totalAmount+=parknum;
         }
@@ -40,7 +43,8 @@ public class ParkingBoyTest_WhenHavingSeveralParkplace {
     * 都空       停车
     * */
     @Test
-    public void should_park_Sucess_when_park_is_empty(){
+    public void should_park_Sucess_when_park_is_empty()
+    {
         parkingBoy.park(new Car())  ;
         Assert.assertEquals(new Integer(totalAmount-1),parkingBoy.getAvailableNum());
     }
@@ -48,7 +52,8 @@ public class ParkingBoyTest_WhenHavingSeveralParkplace {
    * 都空              取车
    * */
     @Test(expected = edu.buaa.park.NoCarException.class)
-    public void should_fetch_Sucess_when_park_is_empty(){
+    public void should_fetch_Sucess_when_park_is_empty()
+    {
         parkingBoy.fetch(new Ticket());
     }
 
@@ -56,9 +61,12 @@ public class ParkingBoyTest_WhenHavingSeveralParkplace {
    * 不全为空 ,取车
    * */
     @Test
-    public void should_fetch_Sucess_when_park_is_notempty(){
-        for(int i=0;i<totalAmount/2;i++){
-        parkingBoy.park(new Car());}
+    public void should_fetch_Sucess_when_park_is_notempty()
+    {
+        for(int i=0; i<totalAmount/2; i++)
+        {
+            parkingBoy.park(new Car());
+        }
         Car car=new Car();
         Ticket ticket=parkingBoy.park(car);
         Assert.assertSame(car,parkingBoy.fetch(ticket));
@@ -68,9 +76,12 @@ public class ParkingBoyTest_WhenHavingSeveralParkplace {
    * 全满 ,停车
    * */
     @Test(expected = edu.buaa.park.ParkFullException.class)
-    public void should_throwParkFullException_if_park_when_park_is_full(){
-        for(int i=0;i<totalAmount;i++){
-            parkingBoy.park(new Car());}
+    public void should_throwParkFullException_if_park_when_park_is_full()
+    {
+        for(int i=0;i<totalAmount;i++)
+        {
+            parkingBoy.park(new Car());
+        }
         parkingBoy.park(new Car());
     }
  }

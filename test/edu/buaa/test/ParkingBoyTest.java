@@ -13,13 +13,15 @@ import java.util.ArrayList;
  * Time: 下午2:32
  * To change this template use File | Settings | File Templates.
  */
-public class ParkingBoyTest {
+public class ParkingBoyTest
+{
 
     /**
      * 停车仔停车
      */
     @Test
-    public void parkBoy_ShouldParkCar(){
+    public void parkBoy_ShouldParkCar()
+    {
         Car car=new Car();
         int maxParkingNum=20;
         ParkPlace parkPlace=new ParkPlace(maxParkingNum);
@@ -33,7 +35,8 @@ public class ParkingBoyTest {
     * 停车仔取车
     * */
     @Test
-    public void parkBoy_ShouldfetchCar(){
+    public void parkBoy_ShouldfetchCar()
+    {
         Car car=new Car();
         int maxParkingNum=20;
         ParkPlace parkPlace=new ParkPlace(maxParkingNum);

@@ -18,7 +18,8 @@ import java.util.List;
  * Time: 下午1:38
  * To change this template use File | Settings | File Templates.
  */
-public class ParkingDirectorTest {
+public class ParkingDirectorTest
+{
 
     /**
      * 主管查看所有的停车记录
@@ -36,7 +37,8 @@ public class ParkingDirectorTest {
     int allAvailableNum;
 
     @Before
-    public void init(){
+    public void init()
+    {
         parkplace1 = new  ParkPlace(1 ,20);
         parkplace2 = new  ParkPlace(2, 18);
         parkplace3 = new  ParkPlace(3, 16);
@@ -61,7 +63,8 @@ public class ParkingDirectorTest {
      * 查看所有停车列表
      */
     @Test
-    public void testAllRecord() {
+    public void testAllRecord()
+    {
         ParkingDirector pd = new ParkingDirector();
         pd.showAllRecord(parkingManagers);
     }
@@ -70,7 +73,8 @@ public class ParkingDirectorTest {
 
      */
     @Test
-    public void testAllRecordAndTotalCount() {
+    public void testAllRecordAndTotalCount()
+    {
         ParkingDirector pd = new ParkingDirector();
         pd.showAllRecordAndTotalCount(parkingManagers);
     }
@@ -80,7 +84,8 @@ public class ParkingDirectorTest {
 
      */
     @Test
-    public void testAllRecordAndCount() {
+    public void testAllRecordAndCount()
+    {
         ParkingDirector pd = new ParkingDirector();
         pd.showAllRecordAndCount(parkingManagers);
     }

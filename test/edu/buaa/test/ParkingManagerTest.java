@@ -15,7 +15,8 @@ import java.util.List;
  * Time: 下午1:38
  * To change this template use File | Settings | File Templates.
  */
-public class ParkingManagerTest {
+public class ParkingManagerTest
+{
 
       List<ParkingBoy> parkingBoys = new ArrayList<ParkingBoy>();
     ParkPlace parkplace1,parkplace2,parkplace3,parkplace4,parkplace5;
@@ -27,7 +28,8 @@ public class ParkingManagerTest {
 
 
     @Before
-    public void init(){
+    public void init()
+    {
         parkplace1 = new  ParkPlace(1,20);
         parkplace2 = new  ParkPlace(2,18);
         parkplace3 = new  ParkPlace(3,16);
@@ -51,7 +53,8 @@ public class ParkingManagerTest {
      */
 
     @Test
-    public void testAddParkingBoy(){
+    public void testAddParkingBoy()
+    {
         System.out.println("显示添加前的停车仔列表：");
            ParkingManager mp = new ParkingManager("经理1",parkingBoys,parkPlaces3,new FirstAvailableParkingLotChooser());
         mp.showParkingBoys(parkingBoys);
@@ -66,7 +69,8 @@ public class ParkingManagerTest {
      * 经理删除停车仔
      */
     @Test
-    public void testDelParkingBoy(){
+    public void testDelParkingBoy()
+    {
         System.out.println("显示删除前的停车仔列表：");
         ParkingManager mp = new ParkingManager("经理1",parkingBoys,parkPlaces3,new FirstAvailableParkingLotChooser());
         mp.showParkingBoys(parkingBoys);
@@ -79,7 +83,8 @@ public class ParkingManagerTest {
      * 经理查看管理的停车仔
      */
     @Test
-    public void testshowParkingBoy(){
+    public void testshowParkingBoy()
+    {
         System.out.println("显示管理的停车仔列表：");
         ParkingManager mp = new ParkingManager("经理1",parkingBoys,parkPlaces3,new FirstAvailableParkingLotChooser());
         mp.showParkingBoys(parkingBoys);
@@ -91,7 +96,8 @@ public class ParkingManagerTest {
      * 经理停车
      */
     @Test
-    public void parkManager_ShouldParkCar(){
+    public void parkManager_ShouldParkCar()
+    {
         Car car=new Car();
         int maxParkingNum=20;
         ParkPlace parkPlace=new ParkPlace(maxParkingNum);
@@ -105,7 +111,8 @@ public class ParkingManagerTest {
     * 经理取车
     * */
     @Test
-    public void parkManager_ShouldfetchCar(){
+    public void parkManager_ShouldfetchCar()
+    {
         Car car=new Car();
         int maxParkingNum=20;
         ParkPlace parkPlace=new ParkPlace(maxParkingNum);
